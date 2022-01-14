@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button routerLink="/tab/users">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title *ngIf="user">{{ user.username }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="setModif()">Rendre Modifiable</ion-button>
+  <div *ngIf="!modif">
+    <ion-grid *ngIf="user">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="onDelete(user.id)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <img [src]="user.avatar">
+        </ion-col>
+        <ion-col size="6">
+          <strong>Username</strong> <br>
+          {{user.userName}} <br>
+          <strong>First name</strong> <br>
+          {{user.firstName}} <br>
+          <strong>Last name</strong> <br>
+          {{user.lastName}} <br>
+          <strong>Age</strong> <br>
+          {{user.age}} <br>
+          <strong>Job</strong> <br>
+          {{user.job}} <br>
+          <strong>Street</strong> <br>
+          {{user.street}} <br>
+          <strong>City</strong> <br>
+          {{user.city}} <br>
+          <strong>ZipCode</strong> <br>
+          {{user.zipCode}} <br>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="modif && user">
+    <ion-item>
+      <ion-label>Avatar</ion-label>
+      <ion-input type="text" [(ngModel)]="user.Avatar"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>First name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age</ion-label>
+      <ion-input type="text" [(ngModel)]="user.age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Job</ion-label>
+      <ion-input type="text" [(ngModel)]="user.Job"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Street</ion-label>
+      <ion-input type="text" [(ngModel)]="user.Street"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>City</ion-label>
+      <ion-input type="text" [(ngModel)]="user.City"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ZipCode</ion-label>
+      <ion-input type="text" [(ngModel)]="user.ZipCode"></ion-input>
+    </ion-item>
+    <p class="text-center">
+      <ion-button (click)="onModif()">Modifier</ion-button>
+    </p>
+  </div>
+</ion-content>

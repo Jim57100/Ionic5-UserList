@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: UsersListPage
+  },
+  {
+    path: 'new',
+    loadChildren: () => import('./user-new/user-new.module').then( m => m.UserNewPageModule)
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
   }
 ];
 

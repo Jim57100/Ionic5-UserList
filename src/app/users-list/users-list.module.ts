@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { UsersListPageRoutingModule } from './users-list-routing.module';
 
 import { UsersListPage } from './users-list.page';
+import { UserNewPipe } from './user-new.pipe';
+import { UserPipe } from './user.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { UsersListPage } from './users-list.page';
     IonicModule,
     UsersListPageRoutingModule
   ],
-  declarations: [UsersListPage]
+  declarations: [UsersListPage, UserNewPipe, UserPipe]
 })
 export class UsersListPageModule {}

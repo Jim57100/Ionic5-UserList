@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button routerLink="/tab/users">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>New User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Avatar</ion-label>
+    <ion-input type="text" [(ngModel)]="user.avatar"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="user.userName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>First name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Last name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.lastName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>age</ion-label>
+    <ion-input type="text" [(ngModel)]="user.age"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Job</ion-label>
+    <ion-input type="text" [(ngModel)]="user.job"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Street</ion-label>
+    <ion-input type="text" [(ngModel)]="user.street"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>City</ion-label>
+    <ion-input type="text" [(ngModel)]="user.city"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Zip code</ion-label>
+    <ion-input type="text" [(ngModel)]="user.zipCode"></ion-input>
+  </ion-item>
+  <p class="text-center">
+    <ion-button (click)="add()">Envoyer</ion-button>
+  </p>
+</ion-content>
+

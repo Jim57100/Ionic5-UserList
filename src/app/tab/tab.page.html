@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>tab</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>home</ion-label>
+    </ion-tab-button>
 
-<ion-content>
+    <ion-tab-button tab="users">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>list</ion-label>
+    </ion-tab-button>
 
-</ion-content>
+    <ion-tab-button tab="uploads">
+      <ion-icon name="camera-outline"></ion-icon>
+      <ion-label>photo</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
