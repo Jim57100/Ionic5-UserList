@@ -24,7 +24,8 @@ export class UserPage implements OnInit {
 
   ngOnInit() {
     this.modif = false;
-    const id = this.route.snapshot.paramMap.get('id');
+    // const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.params['id'];
     console.log(id);
     this.User.get(id).subscribe((value: any) => {
       this.user = value;
@@ -71,7 +72,7 @@ export class UserPage implements OnInit {
     });
   }
 
-  onDelete(id: any) {
+  onDelete(id :any) {
     this.User.delete(id);
     this.router.navigate(['/tabs/users'])
   }

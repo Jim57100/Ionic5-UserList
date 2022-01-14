@@ -42,6 +42,7 @@ export class UserNewPage implements OnInit {
     this.User.saveNewUser(this.user).subscribe(() => {
       this.user = new User();
       this.presentToast();
+      // this.router.navigate('\users');
     })
   }
 
