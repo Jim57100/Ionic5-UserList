@@ -27,7 +27,7 @@ export class GeolocationPage {
   map:any;
   markers = [];
 
-  constructor(private afAuth: AngularFireAuth, private locateCollection :AngularFirestore) { 
+  constructor(private afAuth: AngularFireAuth, private afs :AngularFirestore) { 
     this.anonLogin();
   }
 
@@ -39,7 +39,7 @@ export class GeolocationPage {
     this.afAuth.signInAnonymously().then(res => {
       console.log(res.user.uid);
       this.user = res.user;
-      this.locationsCollection = this.locateCollection.collection(
+      this.locationsCollection = this.afs.collection(
         `locations/${this.user.uid}/track`,
         ref => ref.orderBy('timestamp')
       );
@@ -101,7 +101,7 @@ export class GeolocationPage {
   } 
 
   // Save a new location to Firebase and center the map
-  addNewLocation(lat, lng, timestamp) {
+  addNewLocation(lat: number, lng: number, timestamp: number) {
     this.locationsCollection.add({
       lat,
       lng,
@@ -113,14 +113,10 @@ export class GeolocationPage {
     this.map.setCenter(position);
     this.map.setZoom(5);
   }
-  // Delete a location from Firebase
-  deleteLocation(pos) {
-    console.log('delete: ', pos);
-    this.locationsCollection.doc(pos.id).delete();
-  }
+
   
   // Redraw all markers on the map
-  updateMap(locations) {
+  updateMap(locations: any) {
     // Remove all current marker
     this.markers.map(marker => marker.setMap(null));
     this.markers = [];
@@ -135,5 +131,11 @@ export class GeolocationPage {
       });
       this.markers.push(marker);
     }
+  }
+
+  // Delete a location from Firebase
+  deleteLocation(pos: { id: string; }) {
+    console.log('delete: ', pos);
+    this.locationsCollection.doc(pos.id).delete();
   }
 }
