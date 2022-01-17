@@ -17,9 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('../users-list/users-list.module').then( m => m.UsersListPageModule)
       },
       {
-        path: 'uploads',
-        loadChildren: () => import('../uploads/uploads.module').then( m => m.UploadsPageModule)
-      }
+        path: 'geolocation',
+        loadChildren: () => import('../geolocation/geolocation.module').then( m => m.GeolocationPageModule)
+      },
+
     ]
   },
   {

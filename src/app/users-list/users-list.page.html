@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>usersList</ion-title>
+  <ion-toolbar color="danger">
+    <ion-title>Members</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
   <ion-button routerLink='/tab/users/new'><ion-icon name="person-add-outline"></ion-icon></ion-button>
-  <h2>Liste des utilisateurs</h2>
+  <h2>Members list</h2>
   
   <ion-grid>
     <ion-row *ngFor="let user of users" >
-      <ion-col size="4" >
+      <ion-col size="4" class="imgCol">
         <ion-list [routerLink]="['/tab/users', user.id]">
-          <ion-item>
-            <img [src]="user.avatar" [alt]="user.userName">  
+          <ion-item >
+            <img [src]="user.avatar" [alt]="user.userName" id="img">  
           </ion-item>
           <ion-item>
             {{ user.userName }}
@@ -24,7 +24,7 @@
         <ion-list>
           <ion-item>{{ user. firstName }}</ion-item>
           <ion-item>{{ user.lastName }}</ion-item>
-          <ion-item>{{ user.age }} ans</ion-item>
+          <ion-item>{{ user.job }}</ion-item>
         </ion-list>
       </ion-col>
     </ion-row>

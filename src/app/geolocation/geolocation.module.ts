@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UploadsPageRoutingModule } from './uploads-routing.module';
+import { GeolocationPageRoutingModule } from './geolocation-routing.module';
 
-import { UploadsPage } from './uploads.page';
+import { GeolocationPage } from './geolocation.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UploadsPageRoutingModule
+    GeolocationPageRoutingModule
   ],
-  declarations: [UploadsPage]
+  declarations: [GeolocationPage]
 })
-export class UploadsPageModule {}
+export class GeolocationPageModule {}
