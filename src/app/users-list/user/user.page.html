@@ -24,27 +24,33 @@
 
       <ion-row>
         <ion-col size="12">
-          <img [src]="user.avatar" id="img">
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6" id="info">
-          <strong>Username: </strong>
-          {{user.userName}} <br>
-          <strong>First name</strong>
-          {{user.firstName}} <br>
-          <strong>Last name: </strong>
-          {{user.lastName}} <br>
-          <strong>Age: </strong>
-          {{user.age}} <br>
-          <strong>Job: </strong>
-          {{user.job}} <br>
-          <strong>Street: </strong>
-          {{user.street}} <br>
-          <strong>City: </strong>
-          {{user.city}} <br>
-          <strong>ZipCode: </strong>
-          {{user.zipCode}} <br>
+          <ion-card class="ion-text-center">
+            <ion-row>
+              <ion-card-header>
+                <img [src]="user.avatar" id="img">
+              </ion-card-header>
+            </ion-row>
+            <ion-row>
+              <ion-card-content>
+                <strong>Username: </strong>
+                {{user.userName}} <br>
+                <strong>First name</strong>
+                {{user.firstName}} <br>
+                <strong>Last name: </strong>
+                {{user.lastName}} <br>
+                <strong>Age: </strong>
+                {{user.age}} <br>
+                <strong>Job: </strong>
+                {{user.job}} <br>
+                <strong>Street: </strong>
+                {{user.street}} <br>
+                <strong>City: </strong>
+                {{user.city}} <br>
+                <strong>ZipCode: </strong>
+                {{user.zipCode}} <br>
+              </ion-card-content>
+            </ion-row>
+          </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>

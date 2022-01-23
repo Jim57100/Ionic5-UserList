@@ -1,3 +1,29 @@
+
+ion-toolbar {
+  height: 70px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
 #img {
 border-radius: 50%;
+}
+
+ion-card {
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ion-text-center {
+  text-align: center;
+}
+
+
+ion-card-content {
+  font-size: 20px;
+  
 }
